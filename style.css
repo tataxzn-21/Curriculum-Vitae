@@ -1,0 +1,242 @@
+/* ===== Seletor universal (opcional) ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Seletor por ELEMENTO ===== */
+body {
+  font-family: Georgia, "Times New Roman", serif; /* fonte 2 (do sistema) */
+  background-color: #fde2ea; /* rosa bebê */
+  color: #3b1a2a; /* contraste ~11:1 */
+  line-height: 1.6;
+  padding-bottom: 20px;
+}
+
+h1, h2, h3 {
+  font-family: "Poppins", Arial, sans-serif; /* fonte 1 (externa - Google Fonts) */
+}
+
+h2 {
+  color: #9d174d;
+  font-weight: 700; /* negrito */
+  border-bottom: 2px solid #f48fb1;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  color: #3b1a2a;
+  font-weight: 600;
+  text-decoration: underline dotted #f06292; /* decoração de texto */
+  text-underline-offset: 4px;
+  margin-bottom: 4px;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+strong {
+  font-weight: 700; /* negrito */
+  color: #9d174d;
+}
+
+/* Conteúdo centralizado abaixo do cabeçalho */
+section,
+body > p {
+  width: min(820px, calc(100% - 40px));
+  margin: 0 auto 20px;
+}
+
+section {
+  background-color: #fff5f8;
+  border: 1px solid #f8bbd0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(157, 23, 77, 0.12);
+}
+
+/* ===== Seletor por CLASSE ===== */
+.header {
+  display: grid; /* nome/cargo à esquerda, foto à direita */
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "nome foto"
+    "cargo foto";
+  align-items: center;
+  column-gap: 20px;
+  width: 100%; /* ocupa a tela toda */
+  background-color: #f8c8dc; /* rosa bebê mais forte */
+  color: #3b1a2a; /* contraste ~9:1 */
+  text-align: left;
+  padding: 30px 40px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  grid-area: nome;
+  align-self: end;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #831843;
+  margin-bottom: 6px;
+}
+
+.cargo {
+  grid-area: cargo;
+  align-self: start;
+  font-style: italic; /* itálico */
+  font-size: 1.2rem;
+}
+
+.periodo {
+  font-style: oblique; /* oblíquo */
+  color: #6b3a4f; /* contraste ~7:1 */
+  margin-bottom: 8px;
+}
+
+.icone {
+  width: 16px; /* ícones pequenos */
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.item-educacao img {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin-right: 15px;
+}
+
+.item-educacao::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ===== Seletor por ID ===== */
+#foto-perfil {
+  grid-area: foto;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+}
+
+#abrir-modal {
+  background-color: #9d174d;
+  color: #ffffff; /* contraste ~7,5:1 */
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+#modal-contato {
+  margin: auto;
+  padding: 25px;
+  border: 2px solid #f48fb1;
+  border-radius: 10px;
+  background-color: #fff5f8;
+  color: #3b1a2a;
+  width: 90%;
+  max-width: 420px;
+}
+
+#modal-contato::backdrop {
+  background-color: rgba(59, 26, 42, 0.6);
+}
+
+/* ===== Seletor por ATRIBUTO ===== */
+a[target="_blank"] {
+  font-weight: 700;
+}
+
+a[href^="https"]::after {
+  content: " ↗";
+}
+
+input[type="text"],
+input[type="url"],
+input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #9d5c75;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-family: Georgia, serif;
+}
+
+/* ===== Seletor por PSEUDO-CLASSE ===== */
+a:link,
+a:visited {
+  color: #831843; /* rosa escuro - contraste ~10:1 */
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #be185d; /* muda a cor ao passar o mouse - contraste ~5,9:1 */
+  text-decoration: none;
+}
+
+#abrir-modal:hover,
+button:hover {
+  background-color: #be185d;
+  color: #ffffff;
+}
+
+input:focus {
+  outline: 3px solid #be185d;
+  background-color: #fff0f5;
+}
+
+.habilidades li:first-child {
+  font-weight: 700;
+}
+
+.habilidades li:nth-child(even) {
+  color: #9d174d;
+}
+
+/* Botões do formulário */
+#form-contato button {
+  background-color: #9d174d;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* ===== Ajuste para celular ===== */
+@media (max-width: 520px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .cargo {
+    font-size: 1rem;
+  }
+
+  #foto-perfil {
+    width: 85px;
+    height: 85px;
+  }
+}

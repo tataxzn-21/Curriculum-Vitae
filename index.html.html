@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+ <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo - Tânia Mara de Souza</title>
+</head>
+
+<body>
+<div class="header">
+  <h1>Tânia Mara de Souza</h1>
+  <img id="foto-perfil" src="imagens/img01.jpg" alt="Foto de Perfil de Tânia Mara">
+  <p class="cargo">Engenheira de Software</p>
+</div>
+
+  <section class="contato">
+    <h2>Contato</h2>
+    <ul>
+      <li><strong>Telefone:</strong> (43) 99823-8405</li>
+      <li><strong>Email:</strong> engs.taniamara@gmail.com</li>
+      <li>
+        <img class="icone" src="icones/icon01.avif" alt="Icone LinkedIn">
+        <strong>GitHub:</strong> <a href="https://github.com/tataxzn-21" target="_blank">github.com/tataxzn-21</a>
+      </li>
+      <li>
+      <img class="icone" src="icones/icon02.png" alt="Icone GitHub">
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/t%C3%A2nia-mara-de-souza-6a854735b" target="_blank">linkedin.com/in/tania-mara-de-souza</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="habilidades">
+    <h2>Habilidades</h2>
+    <ul>
+      <li>JavaScript</li>
+      <li>HTML5 &amp; CSS3</li>
+      <li>IA</li>
+      <li>SQL</li>
+      <li>Java</li>
+      <li>Git &amp; GitHub</li>
+    </ul>
+  </section>
+
+  <section class="resumo">
+    <h2>Resumo</h2>
+    <p>Engenheira de Software em formação que atualmente trabalha na área de RH, com experiência em atendimento ao público e planejamento de projetos. Apaixonada por criar soluções inteligentes que poderão ajudar a comunidade a otimizar suas rotinas.</p>
+  </section>
+
+  <section class="experiencia">
+    <h2>Experiência Profissional</h2>
+    <div class="item-experiencia">
+      <h3>Jovem Aprendiz | Aguativa Golf Resort</h3>
+      <p class="periodo">03/2026 - 02/2027</p>
+      <ul>
+        <li>Responsável pelo atendimento dos funcionários no balcão.</li>
+        <li>Colaborou com a execução de atividades para os aniversariantes do mês.</li>
+        <li>Desenvolveu um convite online para os aniversariantes do mês personalizado com a identidade visual da empresa, utilizando HTML5 e CSS3.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="educacao">
+    <h2>Educação</h2>
+    <div class="item-educacao">
+          <img src="imagens/img02.png" alt="Ícone de Currículo">
+      <h3>Engenharia de Software</h3>
+      <p>Universidade Tecnológica Federal do Paraná | Conclusão: 2030</p>
+    </div>
+  </section>
+
+  <p>
+    <button type="button" id="abrir-modal">Enviar informações de contato</button>
+  </p>
+
+  <dialog id="modal-contato">
+    <form method="dialog" id="form-contato">
+      <h2>Formulário de contato</h2>
+
+      <p>
+        <label for="nome-completo">Nome Completo:</label><br>
+        <input type="text" id="nome-completo" name="nome-completo">
+      </p>
+
+      <p>
+        <label for="instagram">Link para o Instagram:</label><br>
+        <input type="url" id="instagram" name="instagram" placeholder="https://www.instagram.com/seu-usuario">
+      </p>
+
+      <p>
+        <label for="whatsapp">Número do WhatsApp:</label><br>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000">
+      </p>
+
+      <p>
+        <button type="submit">Enviar</button>
+        <button type="button" id="fechar-modal">Fechar</button>
+      </p>
+    </form>
+  </dialog>
+
+  <script>
+    const modal = document.getElementById('modal-contato');
+    const abrirModal = document.getElementById('abrir-modal');
+    const fecharModal = document.getElementById('fechar-modal');
+
+    abrirModal.addEventListener('click', () => modal.showModal());
+    fecharModal.addEventListener('click', () => modal.close());
+  </script>
+</body>
+
+</html>
